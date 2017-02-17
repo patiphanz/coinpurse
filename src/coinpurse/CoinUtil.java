@@ -1,8 +1,6 @@
 package coinpurse;
 
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 /**
  * Some Coin utility methods for practice using Lists and Comparator.
@@ -62,7 +60,13 @@ public class CoinUtil {
 	 * Hint: this is easy if you sort the coins by currency first. :-)
 	 */
 	public static void sumByCurrency(List<Coin> coins) {
-		
+		Map<String,Double> map = new HashMap<>();
+		for (Coin c : coins) {
+			map.put(c.getCurrency(), map.getOrDefault(c.getCurrency(), 0.0) + c.getValue());
+		}
+		for (String currency : map.keySet()) {
+			System.out.println(map.get(currency) + " " + currency);
+		}
 	}
 	
 	/**
