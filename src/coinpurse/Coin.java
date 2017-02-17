@@ -4,7 +4,7 @@ package coinpurse;
  * @author Patiphan Srisook
  *
  */
-public class Coin implements Comparable<Coin>{
+public class Coin implements Comparable<Coin> , Valuable{
 	/** Value of the coin. */
 	private double value;
 	/** The currency we want to get.*/
@@ -53,7 +53,7 @@ public class Coin implements Comparable<Coin>{
 		if(c == null) return false;
 		if(c.getClass() != this.getClass()) return false;
 		Coin other = (Coin) c;
-		if(this.value == other.value) return true;
+		if(this.getValue() == other.getValue()) return true;
 		return false;
 	}
 	
