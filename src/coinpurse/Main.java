@@ -16,5 +16,6 @@ public class Main {
 		Purse purse = new Purse(CAPACITY);
 		ConsoleDialog consoleDialog = new ConsoleDialog(purse);
 		consoleDialog.run();
+		
 	}
 }

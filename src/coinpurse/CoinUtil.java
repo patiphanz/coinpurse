@@ -61,7 +61,7 @@ public class CoinUtil {
 	 */
 	public static void sumByCurrency(List<Coin> coins) {
 		Map<String,Double> map = new HashMap<>();
-		for (Coin c : coins) {
+		for (AbstractValuable c : coins) {
 			map.put(c.getCurrency(), map.getOrDefault(c.getCurrency(), 0.0) + c.getValue());
 		}
 		for (String currency : map.keySet()) {
